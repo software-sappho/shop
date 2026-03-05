@@ -18,8 +18,12 @@
       </ul>
 
       <div class="feature-image">
-        <%= image_tag(@product.image_url(:default)) %>
-      </div>
+  <% if @product.image.present? %>
+    <%= image_tag(@product.image_url(:default)) %>
+  <% else %>
+    <%= image_tag("fossil.jpg") %>
+  <% end %>
+</div>
 
       <div class="content pa4 mt3 bg-white border-radius-3">
 
